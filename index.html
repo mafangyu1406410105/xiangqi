@@ -13,6 +13,7 @@
 </div>
 
 <script type="text/javascript">
+
     //车马相士将士相马车 8*11
     var qzName=["車","馬","相","仕","将","仕","相","馬","車","炮","炮","兵","兵","兵","兵","兵"];//
     var qzRedArray=new Array();
@@ -275,7 +276,7 @@
             qz.isChoose=false;
             console.log('createQZ_fun_noChoose_'+qz.side+" 的 【"+qz.name+"】被取消选中，原坐标是：（"+qz.x+","+qz.y+"）");
         };
-        //   console.log(qz.side+" 已创建："+qz.name+"，坐标是：（"+qz.x+","+qz.y+"）");
+          //   console.log(qz.side+" 已创建："+qz.name+"，坐标是：（"+qz.x+","+qz.y+"）");
         return qz;
     }
     function way(obj,a,b,c){
@@ -289,14 +290,14 @@
         console.log("【"+k+"】("+x+","+y+") 在走");
         switch (k){
             case "車":
-                if(x==a){//y-b有没有其它棋子
+                if(x==a){   //y-b有没有其它棋子
                     console.log("沿y轴:现在y="+y+"； 目标y=b("+b);
                     if(Math.abs(y-b)==cell){return true}
                     if(b<y){
                         console.log("b<y往上走,x不变,y减小");
                         for(var f=y-cell;f>b;f-=cell){
                             console.log("沿y轴:现在y="+f+"； 目标y=b("+b);
-                            if(checkXYisEmpty(a,f)!==true){//路径坐标上有其它棋子
+                            if(checkXYisEmpty(a,f)!==true){   //路径坐标上有其它棋子
                                 wayResult=false; //不能走
                                 console.log("不能走");
                                 if(!tryJiangJun)np.innerHTML="车步错误";
@@ -664,14 +665,15 @@
         cxt.stroke();
         cxt.beginPath();
         cxt.arc(3*cell,2.5*cell,cell/4,0,Math.PI*2,true);
-        cxt.stroke();
-        cxt.beginPath();
+        cxt.stroke(); 
+        cxt.beginPath(); 
         cxt.arc(-3*cell,-2.5*cell,cell/4,0,Math.PI*2,true);
-        cxt.stroke();
-        cxt.beginPath();
+        cxt.stroke(); 
+        cxt.beginPath(); 
         cxt.arc(3*cell,-2.5*cell,cell/4,0,Math.PI*2,true);
         cxt.stroke();
         cxt.closePath();
+
         //楚河 汉界
         cxt.fillStyle='#ff0000';
         cxt.beginPath();
@@ -679,6 +681,7 @@
         cxt.fillText('汉界',1*cell,0.6*cellh);
         cxt.closePath();
     }
+
 </script>
 ﻿</body>
 </html>
